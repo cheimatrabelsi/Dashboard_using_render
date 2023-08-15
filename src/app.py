@@ -21,7 +21,7 @@ from scipy.stats import gaussian_kde
 # In[7]:
 
 
-df = pd.read_excel(r"C:\Users\hp\Desktop\STAGE\app\data_2022.xlsx")
+df = pd.read_excel("data_2022.xlsx")
 
 indices_to_delete = [15352, 15353, 15354]  # indices of the rows to delete
 Data = df.drop(indices_to_delete)
