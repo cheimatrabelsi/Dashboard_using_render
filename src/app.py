@@ -21,7 +21,8 @@ from scipy.stats import gaussian_kde
 # In[7]:
 
 
-df=pd.read_excel("data_2022.xlsx")
+df = pd.read_excel(r"C:\Users\hp\Desktop\STAGE\app\data_2022.xlsx")
+
 indices_to_delete = [15352, 15353, 15354]  # indices of the rows to delete
 Data = df.drop(indices_to_delete)
 
@@ -155,7 +156,7 @@ revenue_data = [grouped_data[category] for category in grouped_data.index]
 laboratories = Data['Laboratoire'].unique()
 # Create the Dash application
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
-app = dash.Dash(__name__,suppress_callback_exceptions=True, external_stylesheets=external_stylesheets)
+app = dash.Dash(__name__, suppress_callback_exceptions=True, external_stylesheets=external_stylesheets)
 server = app.server
 
 ##
@@ -410,7 +411,7 @@ def update_pdf_plot(selected_lab):
 
 # Run the application in external mode (opens in a new browser tab using http://127.0.0.1:8052/)
 if __name__ == '__main__':
-    app.run_server(mode='external', debug=True, port=8050)
+    app.run_server(debug=True, port=8050)
 
 
 # In[ ]:
